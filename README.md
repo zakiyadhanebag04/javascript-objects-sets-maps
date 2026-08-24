@@ -59,13 +59,13 @@ It:
 
 ## Example Output
 
-### Objects
+### objects
 
 ```text
 Person 1: John, 25, Male, Developer
 Person 2: Alice, 23, Female, Designer
 
-###set
+### set
 
 Unique numbers: [1, 2, 3, 4, 5]
 
