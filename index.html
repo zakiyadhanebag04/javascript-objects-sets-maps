@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Objects, Sets and Maps</title>
+</head>
+<body>
+<h1>JavaScript Objects, Sets and Maps</h1>
+<p>Open the browser console to see the results.</p>
+<script>
+
+// =========================
+// 1. OBJECTS
+// =========================
+
+        let person1 = {
+            name: "John",
+            age: 25,
+            gender: "Male",
+            occupation: "Developer"
+        };
+
+        let person2 = {
+            name: "Alice",
+            age: 23,
+            gender: "Female",
+            occupation: "Designer"
+        };
+
+        console.log("Person 1:", person1);
+        console.log("Person 2:", person2);
+
+
+        // =========================
+        // 2. SETS
+        // =========================
+
+        // Create a Set with unique numbers
+        function createUniqueSet(numbers) {
+            return new Set(numbers);
+        }
+
+        let numbers = [1, 2, 2, 3, 4, 4, 5];
+
+        let uniqueNumbers = createUniqueSet(numbers);
+
+        console.log("Unique numbers:", [...uniqueNumbers]);
+
+
+        // Union
+        function union(setA, setB) {
+            return new Set([...setA, ...setB]);
+        }
+
+        // Intersection
+        function intersection(setA, setB) {
+            return new Set(
+                [...setA].filter(number => setB.has(number))
+            );
+        }
+
+        // Difference
+        function difference(setA, setB) {
+            return new Set(
+                [...setA].filter(number => !setB.has(number))
+            );
+        }
+
+        // Check if one Set is a subset of another Set
+        function isSubset(setA, setB) {
+            return [...setA].every(number => setB.has(number));
+        }
+
+        let setA = new Set([1, 2, 3, 4]);
+        let setB = new Set([3, 4, 5, 6]);
+        let setC = new Set([1, 2]);
+
+        console.log("Set A:", [...setA]);
+        console.log("Set B:", [...setB]);
+
+        console.log("Union:", [...union(setA, setB)]);
+
+        console.log("Intersection:", [...intersection(setA, setB)]);
+
+        console.log("Difference:", [...difference(setA, setB)]);
+
+        console.log("Is Set C a subset of Set A:", isSubset(setC, setA));
+
+
+        // =========================
+        // 3. MAPS
+        // =========================
+
+        let student = new Map();
+
+        // Add key-value pairs
+        student.set("name", "Suhana");
+        student.set("age", 21);
+        student.set("course", "BCA");
+
+        // Access a value
+        console.log("Student name:", student.get("name"));
+
+        // Update a value
+        student.set("age", 22);
+
+        console.log("Updated age:", student.get("age"));
+
+        // Delete an entry
+        student.delete("course");
+
+        console.log("Map after deleting course:", [...student]);
+
+    </script>
+
+</body>
+</html>
